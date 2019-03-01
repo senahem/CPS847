@@ -1,14 +1,20 @@
 import unittest
 
-class ForVideo(unittest.TestCase):
+import my_functions
+
+class TestMyFunc(unittest.TestCase):
+
     def setUp(self):
-        print 'some test'
+        pass
 
-    def test_search_in_python_org(self):
-        print 'something'
+    def test_increment_one_1(self):
+        self.assertEqual( my_functions.increment_by_one(1), 2)
 
-    def tearDown(self):
-        print 'something'
+    def test_increment_one_2(self):
+        self.assertEqual( my_functions.increment_by_one(0), 1)
 
-if __name__ == "__main__":
+    def test_increment_two(self):
+        self.assertEqual( my_functions.increment_by_two(0), 2)
+
+if __name__ == '__main__':
     unittest.main()
